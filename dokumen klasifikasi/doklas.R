@@ -14,7 +14,7 @@ docs <- tm_map(docs, removePunctuation)
 docs <- tm_map(docs, removeNumbers)  
 docs <- tm_map(docs, tolower)  
 docs <- tm_map(docs, removeWords, c("dapat", "yang","adalah","untuk","dan"))  
-corpus <- VCorpus(VectorSource(data))
+corpus <- VCorpus(VectorSource(docs))
 
 # Create a document term matrix.
 tdm <- DocumentTermMatrix(corpus, list(removePunctuation = TRUE, stopwords = TRUE, stemming = TRUE, removeNumbers = TRUE))
